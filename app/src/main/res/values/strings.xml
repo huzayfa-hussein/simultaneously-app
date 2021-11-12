@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Assignment App</string>
+    <string name="request_text">Call Requests</string>
+    <string name="all_try_again">Try Again</string>
+    <string name="all_cancel">Cancel</string>
+    <string name="facing_error_dialog_title">Error Occurred</string>
+    <string name="facing_error_dialog_message">"Something went wrong, please try again!"</string>
+
+    <string name="text_10th_character">10th Character:</string>
+    <string name="text_every_10th_character">Every 10th Character Array:</string>
+    <string name="text_word_counter">Word Counter:</string>
+    <string name="occurrence_count_text">count: %d</string>
+</resources>

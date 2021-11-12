@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="views_padding_vertical">20dp</dimen>
+    <dimen name="views_padding_horizontal">20dp</dimen>
+    <dimen name="height_button_size">60dp</dimen>
+    <dimen name="views_padding_vertical_large">25dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="page_padding">20dp</dimen>
+    <dimen name="textSize_small">12sp</dimen>
+    <dimen name="views_padding_vertical_small">10dp</dimen>
+    <dimen name="textSize_medium">14sp</dimen>
+</resources>
