@@ -59,12 +59,12 @@ class ContentVM(application: Application) : AndroidViewModel(application) {
         })
     }
 
-    fun truecaller10thCharacterRequest(): String {
-        if (content.length < 10) {
+    fun truecaller10thCharacterRequest(index: Int = 10): String {
+        if (content.length < index) {
             failureLiveData.postValue(Unit)
             return ""
         }
-        return content.toCharArray()[10].toString()
+        return content.toCharArray()[index].toString()
     }
 
     private fun truecallerWordCounterRequest(st: String): String {

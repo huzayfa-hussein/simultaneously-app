@@ -6,193 +6,184 @@
     android:layout_height="match_parent"
     tools:context=".ui.ContentActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nested_scroll"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@id/button_call"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/views_padding_horizontal">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/view_tenth_letter"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="@dimen/views_padding_horizontal">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/views_padding_vertical"
+            android:minHeight="@dimen/height_10th_min_size"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#eee"
+            app:strokeWidth="1dp">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/view_tenth_letter"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/views_padding_vertical_large"
-                android:minHeight="70dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:strokeColor="#eee"
-                app:strokeWidth="1dp">
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="10dp"
+                    android:indeterminateTint="@color/color_primary"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/textView_10th_label"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <TextView
+                    android:id="@+id/textView_10th_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/text_10th_character"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/textSize_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_tenth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="15dp">
-
-                    <ProgressBar
-                        android:id="@+id/progressBar"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:indeterminateTint="@color/color_primary"
-                        android:visibility="gone"
-                        app:layout_constraintStart_toEndOf="@id/textView_10th_label"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_marginTop="@dimen/views_padding_vertical_small"
+                    android:gravity="start"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/textSize_small"
+                    app:layout_constraintTop_toBottomOf="@id/textView_10th_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                    <TextView
-                        android:id="@+id/textView_10th_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
-                        android:text="@string/text_10th_character"
-                        android:textColor="@color/text_primary_color"
-                        android:textSize="@dimen/textSize_medium"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+        </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/textView_first"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/views_padding_vertical_small"
-                        android:gravity="start"
-                        android:textColor="@color/text_primary_color"
-                        android:textSize="@dimen/textSize_small"
-                        app:layout_constraintTop_toBottomOf="@id/textView_10th_label" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/view_tenth_letter_array"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_card_size"
+            android:layout_marginTop="@dimen/views_padding_vertical"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_tenth_letter"
+            app:strokeColor="#eee"
+            app:strokeWidth="1dp">
 
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/view_tenth_letter_array"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/views_padding_vertical_large"
-                android:minHeight="70dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_tenth_letter"
-                app:strokeColor="#eee"
-                app:strokeWidth="1dp">
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp">
 
+                <TextView
+                    android:id="@+id/textView_array_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/text_every_10th_character"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/textSize_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <ProgressBar
+                    android:id="@+id/progressBar1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="10dp"
+                    android:indeterminateTint="@color/color_primary"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/textView_array_label"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_every_tenth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="15dp">
-
-                    <TextView
-                        android:id="@+id/textView_array_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
-                        android:text="@string/text_every_10th_character"
-                        android:textColor="@color/text_primary_color"
-                        android:textSize="@dimen/textSize_medium"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ProgressBar
-                        android:id="@+id/progressBar1"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:indeterminateTint="@color/color_primary"
-                        android:visibility="gone"
-                        app:layout_constraintStart_toEndOf="@id/textView_array_label"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView_second"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/views_padding_vertical_small"
-                        android:gravity="start"
-                        android:textColor="@color/text_primary_color"
-                        android:textSize="@dimen/textSize_small"
-                        app:layout_constraintTop_toBottomOf="@id/textView_array_label" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_marginTop="@dimen/views_padding_vertical_small"
+                    android:gravity="start"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/textSize_small"
+                    app:layout_constraintTop_toBottomOf="@id/textView_array_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/view_split_word"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/view_split_word"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_card_size"
+            android:layout_marginTop="@dimen/views_padding_vertical"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_tenth_letter_array"
+            app:strokeColor="#eee"
+            app:strokeWidth="1dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/views_padding_vertical_large"
-                android:minHeight="70dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view_tenth_letter_array"
-                app:strokeColor="#eee"
-                app:strokeWidth="1dp">
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp">
 
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    android:layout_width="@dimen/width_progress"
+                    android:layout_height="@dimen/height_progress"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="10dp"
+                    android:indeterminateTint="@color/color_primary"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@id/textView_split_label"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <TextView
+                    android:id="@+id/textView_split_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/text_word_counter"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/textSize_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_word_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="15dp">
-
-                    <ProgressBar
-                        android:id="@+id/progressBar2"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:indeterminateTint="@color/color_primary"
-                        android:visibility="gone"
-                        app:layout_constraintStart_toEndOf="@id/textView_split_label"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView_split_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
-                        android:text="@string/text_word_counter"
-                        android:textColor="@color/text_primary_color"
-                        android:textSize="@dimen/textSize_medium"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView_third"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/views_padding_vertical_small"
-                        android:gravity="start"
-                        android:textColor="@color/text_primary_color"
-                        android:textSize="@dimen/textSize_small"
-                        app:layout_constraintTop_toBottomOf="@id/textView_split_label" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_marginTop="@dimen/views_padding_vertical_small"
+                    android:gravity="start"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/textSize_small"
+                    app:layout_constraintTop_toBottomOf="@id/textView_split_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_call"

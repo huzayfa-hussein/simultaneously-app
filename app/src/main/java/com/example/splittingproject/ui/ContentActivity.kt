@@ -2,6 +2,7 @@ package com.example.splittingproject.ui
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -23,10 +24,9 @@ class ContentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setTextViewsBehavior()
         button_call.setOnClickListener {
-            progressBar.visibility = View.VISIBLE
-            progressBar1.visibility = View.VISIBLE
-            progressBar2.visibility = View.VISIBLE
+            showLoaders()
             viewModel.fetchContent()
         }
         listenForObservers()
@@ -34,16 +34,16 @@ class ContentActivity : AppCompatActivity() {
 
     private fun listenForObservers() {
         viewModel.tenthCharLiveData.observe(this@ContentActivity) {
-            textView_third.text = it
+            textView_word_count.text = it
             progressBar2.visibility = View.GONE
         }
         viewModel.everyTenthCharLiveData.observe(this@ContentActivity) {
-            textView_first.text = it
+            textView_tenth.text = it
             progressBar.visibility = View.GONE
         }
 
         viewModel.wordCounterLiveData.observe(this@ContentActivity) {
-            textView_second.text = it
+            textView_every_tenth.text = it
             progressBar1.visibility = View.GONE
         }
         viewModel.failureLiveData.observe(this@ContentActivity) {
@@ -51,12 +51,24 @@ class ContentActivity : AppCompatActivity() {
         }
     }
 
+    private fun showLoaders() {
+        progressBar.visibility = View.VISIBLE
+        progressBar1.visibility = View.VISIBLE
+        progressBar2.visibility = View.VISIBLE
+    }
+
+    private fun setTextViewsBehavior() {
+        textView_word_count.movementMethod = ScrollingMovementMethod()
+        textView_every_tenth.movementMethod = ScrollingMovementMethod()
+    }
+
+
     private fun showFailureDialog() {
         val alertDialogLayout = MaterialAlertDialogBuilder(this@ContentActivity)
             .setTitle(resources.getString(R.string.facing_error_dialog_title))
             .setMessage(resources.getString(R.string.facing_error_dialog_message))
             .setPositiveButton(resources.getString(R.string.all_try_again)) { dialogInterface: DialogInterface, i: Int ->
-                viewModel.grabData()
+                viewModel.fetchContent()
             }
             .setNegativeButton(resources.getString(R.string.all_cancel)) { d: DialogInterface, i: Int ->
                 //nothing to do
